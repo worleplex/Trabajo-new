@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="producto.css">
+    <title>Ventas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #bdc3c7;
+            background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+            background: linear-gradient(to right, #2c3e50, #bdc3c7);
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #59C173;
+            background: -webkit-linear-gradient(to right, #5D26C1, #a17fe0, #59C173);
+            background: linear-gradient(to right, #5D26C1, #a17fe0, #59C173);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product {
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .product img {
+            max-width: 100px;
+            margin-right: 20px;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product h3 {
+            margin: 0 0 10px 0;
+        }
+
+        .product p {
+            margin: 0;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #b81111;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #1992d8;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: auto;
+            /* Cambiado a auto para que tome el ancho necesario */
+        }
+
+        input[type="number"],
+        input[type="email"],
+        select {
+            padding: 10px;
+            border: 2px solid #6e0000;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+            width: calc(50% - 10px);
+            /* 50% menos 10px para agregar un pequeño espacio entre ellos */
+            margin-bottom: 10px;
+        }
+
+        label {
+            padding: 10px;
+            font-family: sans-serif;
+            font-size: 25px;
+            color: #fff;
+            flex-basis: 100%;
+        }
+
+        select {
+            width: 100%;
+        }
+
+        input {
+            width: 200px;
+            height: 20px;
+            border-radius: 5px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: #f8f8f8;
+            margin-top: 10px;
+            padding-left: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Venta de los Productos Disponibles </h1>
+    <div class="container">
+        <div class="product">
+            <form id="formulario" action="https://formsubmit.co/izaguirre.julian.cb37@gmail.com" method="POST">
+                <label for="producto">Escoga el producto deseado:</label>
+                <select id="producto" required>
+                    <option value="">Selecciona un producto:</option>
+                    <option value="Camiseta" data-precio="100">Camiseta</option>
+                    <option value="Taza" data-precio="200">Taza</option>
+                    <option value="Termo" data-precio="300">Termo</option>
+                    <option value="Portabotes" data-precio="400">Portabotes</option>
+                    <option value="Vasos" data-precio="500">Vasos</option>
+                </select><br>
+                <label for="cantidad">Cantidad de Productos:</label>
+                <input type="number" id="cantidad" placeholder="Cantidad" required><br>
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" placeholder="Ingrese su correo" required><br>
+                <label for="celular">Celular:</label>
+                <input type="number" id="celular" placeholder="Ingrese su celular" required><br>
+                <label for="estatura">Talla:</label>
+                <input type="number" id="estatura" name="estatura" placeholder="Ingrese talla"><br>
+                <label for="sexo">Para:</label><br>
+                <input type="radio" name="sexo"><label>Hombre</label><br>
+                <input type="radio" name="sexo"><label>Mujer</label><br>
+                <input type="radio" name="sexo"><label>Ambos</label><br>
+                <label for="diseno">Seleccione un archivo para el diseño:</label>
+                <input type="file" id="diseno" name="diseno"><br>
+                <label for="color">Color de la prenda:</label><br>
+                <input type="color" name="color"><br>
+                <button class="btn" type="button" onclick="calcularTotal()">Calcular Total</button><br>
+                <button type="submit">Enviar Pedido</button>
+            </form>
+            <div id="resultado"></div>
+        </div>
+    </div>
+    <script>
+        function calcularTotal() {
+            var producto = document.getElementById("producto").value;
+            var cantidad = parseInt(document.getElementById("cantidad").value);
+            var precio = parseInt(document.getElementById("producto").options[document.getElementById("producto").selectedIndex].dataset.precio);
+            var total = cantidad * precio;
+
+            document.getElementById("resultado").innerHTML = "Total a pagar por " + cantidad + " " + producto + ": $" + total;
+        }
+    </script>
+</html>
