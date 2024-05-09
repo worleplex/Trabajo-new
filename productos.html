@@ -131,11 +131,7 @@
             <label for="producto">Escoga el producto deseado:</label>
             <select id="producto" required>
                 <option value="">Selecciona un producto:</option>
-                <option value="Camiseta" data-precio="100">Camiseta</option>
-                <option value="Taza" data-precio="200">Taza</option>
-                <option value="Termo" data-precio="300">Termo</option>
-                <option value="Portabotes" data-precio="400">Portabotes</option>
-                <option value="Vasos" data-precio="500">Vasos</option>
+                <option value="Camiseta" data-precio="190">Camiseta</option>
             </select><br>
             <label for="cantidad">Cantidad de Productos:</label>
             <input type="number" id="cantidad" placeholder="Cantidad" required><br>
@@ -157,7 +153,7 @@
             <input type="radio" name="sexo"><label>Mujer</label><br>
             <input type="radio" name="sexo"><label>Ambos</label><br>
             <label for="color">Color de la prenda:</label><br>
-            <input type="color" name="color"><br>
+            <input type="color" name="color" required><br>
             <button class="btn" type="button" onclick="calcularTotal()">Calcular Total</button><br>
             <button type="submit">Enviar Pedido</button>
         </form>
@@ -165,7 +161,6 @@
         <div id="resultado"></div>
     </div>
 </div>
-
     <script>
         function calcularTotal() {
             var producto = document.getElementById("producto").value;
@@ -175,5 +170,4 @@
             document.getElementById("resultado").innerHTML = "Total a pagar por " + cantidad + " " + producto + ": $" + total;
         }
     </script>
-
 </html>
