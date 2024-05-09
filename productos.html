@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -114,6 +115,7 @@
             padding-left: 10px;
             margin-bottom: 20px;
         }
+
         #resultado {
             color: #fff;
             font-size: 20px;
@@ -123,46 +125,55 @@
 
 <body>
     <h1>Venta de los Productos Disponibles </h1>
-    <div class="container">
-        <div class="product">
-            <form id="formulario" action="https://formsubmit.co/izaguirre.julian.cb37@gmail.com" method="POST">
-                <label for="producto">Escoga el producto deseado:</label>
-                <select id="producto" required>
-                    <option value="">Selecciona un producto:</option>
-                    <option value="Camiseta" data-precio="190">Camiseta</option>
-                    <option value="Taza" data-precio="90">Taza</option>
-                    <option value="Termo" data-precio="420">Termo</option>
-                    <option value="Portabotes" data-precio="360">Portabotes</option>
-                    <option value="Vasos" data-precio="90">Vasos</option>
-                </select><br>
-                <label for="cantidad">Cantidad de Productos:</label>
-                <input type="number" id="cantidad" placeholder="Cantidad" required><br>
-                <label for="correo">Correo electrónico:</label>
-                <input type="email" id="correo" placeholder="Ingrese su correo" required><br>
-                <label for="celular">Celular:</label>
-                <input type="number" id="celular" placeholder="Ingrese su celular" required><br>
-                <label for="Talla">Talla:</label>
-                <input type="number" id="Talla" name="Talla" placeholder="Ingrese talla"><br>
-                <label for="sexo">Para:</label><br>
-                <input type="radio" name="sexo"><label>Hombre</label><br>
-                <input type="radio" name="sexo"><label>Mujer</label><br>
-                <input type="radio" name="sexo"><label>Ambos</label><br>
-                <label for="color">Color de la prenda:</label><br>
-                <input type="color" name="color"><br>
-                <button class="btn" type="button" onclick="calcularTotal()">Calcular Total</button><br>
-                <button type="submit">Enviar Pedido</button>
-            </form>
-            <br><div id="resultado"></div>
-        </div>
+<div class="container">
+    <div class="product">
+        <form id="formulario" action="https://formsubmit.co/izaguirre.julian.cb37@gmail.com" method="POST">
+            <label for="producto">Escoga el producto deseado:</label>
+            <select id="producto" required>
+                <option value="">Selecciona un producto:</option>
+                <option value="Camiseta" data-precio="100">Camiseta</option>
+                <option value="Taza" data-precio="200">Taza</option>
+                <option value="Termo" data-precio="300">Termo</option>
+                <option value="Portabotes" data-precio="400">Portabotes</option>
+                <option value="Vasos" data-precio="500">Vasos</option>
+            </select><br>
+            <label for="cantidad">Cantidad de Productos:</label>
+            <input type="number" id="cantidad" placeholder="Cantidad" required><br>
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" placeholder="Ingrese su correo" required><br>
+            <label for="celular">Celular:</label>
+            <input type="number" id="celular" placeholder="Ingrese su celular" required><br>
+            <label for="talla">Talla:</label>
+            <select id="talla" required>
+                <option value="">Seleccione una talla:</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+            </select><br>
+            <label for="sexo">Para:</label><br>
+            <input type="radio" name="sexo"><label>Hombre</label><br>
+            <input type="radio" name="sexo"><label>Mujer</label><br>
+            <input type="radio" name="sexo"><label>Ambos</label><br>
+            <label for="color">Color de la prenda:</label><br>
+            <input type="color" name="color"><br>
+            <button class="btn" type="button" onclick="calcularTotal()">Calcular Total</button><br>
+            <button type="submit">Enviar Pedido</button>
+        </form>
+        <br>
+        <div id="resultado"></div>
     </div>
+</div>
+
     <script>
         function calcularTotal() {
             var producto = document.getElementById("producto").value;
             var cantidad = parseInt(document.getElementById("cantidad").value);
             var precio = parseInt(document.getElementById("producto").options[document.getElementById("producto").selectedIndex].dataset.precio);
             var total = cantidad * precio;
-
             document.getElementById("resultado").innerHTML = "Total a pagar por " + cantidad + " " + producto + ": $" + total;
         }
     </script>
+
 </html>
