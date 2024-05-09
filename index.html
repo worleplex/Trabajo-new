@@ -1,13 +1,336 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+  <title>Negocio de sublimaciones</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <div style="background-color: #f2f2f2; padding: 20px;">
+      <style>
+          body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      color: #FFD700;
+      padding: 40px;
+    }
+    h1, h2, h3{
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      margin: 20px;
+    }
+    /* Estilos específicos para cada página */
+    .productos img {
+      max-width: 100%;
+    }
+    .contacto form {
+      margin-top: 20px;
+    }
+    .contacto label, .contacto input, .contacto textarea {
+      display: block;
+      margin-bottom: 10px;
+    }
+    p {
+      line-height: 1.5; /* aumentar el espacio entre reglones*/
+    }
+    .producto {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    .producto img {
+      width: 50%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    p {
+    /*text-align:left;*/
+    color: Black;
+    padding: 12px;
+  
+    }
+    #formulario {
+      display: none;
+    }
+    #formulario2{
+      display: none;
+    }
+    #formulario3{
+      display: none;
+    }
+    #formulario4{
+      display: none;
+    }
+    #formulario5{
+      display: none;
+    }
+    body{
+      height: 100%; 
+      font-family: sans-serif;
+    }
+    button, input, select, textarea {
+      font-family: inherit; /* hace que el valor de la propiedad coincida con el valor calculado 
+      de la propiedad de su elemento principal; hereda el valor del padre.*/
+      font-size: 100%;
+    }
+    .contact_form{  
+      width: 500px; 
+      height: auto;
+      margin: auto; /*centra horizontalmente*/
+      border-radius: 10px;  
+      padding-top: 20px;
+      padding-bottom: 20px;  
+      background-color: #fbfbfb; 
+      padding-left: 15px; 
+    }
+    input{
+      background-color: #fbfbfb; 
+      width: 200px; 
+      height: 20px; 
+      border-radius: 5px;  
+      border-style: solid; 
+      border-width: 1px; 
+      border-color: #ab4493; 
+      margin-top: 10px;   
+      padding-left: 10px;
+      margin-bottom: 20px; 
+    }
+    .menu {
+      position: relative;
+      background: #1FA2FF;  
+      background: -webkit-linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF); 
+      background: linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);   
+      width: 3em;
+      height: 3em;
+      border-radius: 5em;
+      cursor: pointer;
+      border: 1em solid  #ff0101;
+      display: flex;
+      font-size: 15px;
+    }  
+    .menu:after {
+      content: "";
+      position: absolute;
+      top: 1em;
+      left: 1em;
+      width: 1em;
+      height: 0.2em;
+      border-top: 0.6em double #fff;
+      border-bottom: 0.2em solid #fff;
+    }
+    .menu ul {
+      list-style: none;
+      padding: 0;
+    }
+    .menu li {
+      width: 5em;
+      height: 1.4em;
+      padding: 0.2em;
+      margin-top: 0.2em;
+      text-align: center;
+      border-top-right-radius: 0.5em;
+      border-bottom-right-radius: 0.5em;
+      transition: all 1s;
+      background: #e83737; 
+      opacity: 0;
+      z-index: -1;
+    }
+    .menu:hover li {
+      opacity: 1;
+    }
+    .menu:hover ul::before {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 0;
+      display: block;
+      left: -5.5em;
+      top: -5.0em;
+      border-width: 6.5em;
+      border-radius: 7.5em 0 0 7.5em;
+      border-right: 0
+      border-style: solid;
+      border-color: rgba(0,0,0,0.01);
+      z-index: -1;
+      cursor: default;
+    }
+    .menu a {
+      color: white;
+      text-decoration: none;
+      line-height: 1.5em;
+    }
+    .menu a {
+      color: white;
+      text-decoration: none;
+     }
+    .menu ul {
+      transform: rotate(180deg) translateY(-2em);
+      transition: 1s all;
+    }
+    .menu:hover ul {
+      transform: rotate(0deg) translateY(-1em);
+    } 
+    .menu li:hover {
+      background: #3ba7b3;
+      z-index: 10;
+    }
+    .menu li:nth-of-type(1) {
+      transform: rotate(-90deg);
+      position: absolute;
+      left: -1.2em;
+      top: -4.2em;
+    }
+    .menu li:nth-of-type(2) {
+      transform: rotate(-45deg);
+      position: absolute;
+      left: 2em;
+      top: -3em;
+    }
+    .menu li:nth-of-type(3) {
+      position: absolute;
+      left: 3.4em;
+      top: 0.3em;
+    }
+    .menu li:nth-of-type(4) {
+      transform: rotate(45deg);
+      position: absolute;
+      left: 2em;
+      top: 3.7em;
+    }
+    .menu li:nth-of-type(5) {
+      transform: rotate(90deg);
+      position: absolute;
+      left: -1.2em;
+      top: 5em;
+    }
+    .menu li:nth-of-type(6) {
+      transform: rotate(120deg);
+      position: absolute;
+      left: -4em; /* Cambio: Ajusta la posición hacia la izquierda */
+      top: 4.1em;
+    }
+    .menu li:nth-of-type(7) {
+      transform: rotate(150deg);
+      position: absolute;
+      left: -6.1em; /* Cambio: Ajusta la posición hacia la izquierda */
+      top: 2em;
+    }
+    .iconos {
+      width: 200px;
+      display: flex;
+      justify-content: space-around;
+      margin: auto;
+    }
+    .border-icon {
+      height: 20px;
+      width: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      border: solid thin #000000;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      transition: all .3s ease-in;
+    }
+    .border-icon:hover {
+      background-color: #4a4aee;
+      cursor: pointer;
+    }
+    nav a {
+      display: inline-block;
+      margin: 0 20px;
+      color: #0074D9;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    nav a:hover {
+      color: #FFF;
+      background-color: #0074D9;
+      border-radius: 5px;
+    }
+      </style>
 </head>
 <body>
-    <h1>Hola mundo</h1>
-    <a href="productos.html">Haz clic aqui</a>
-    <a href="Todoslosdemas.html">Haz clic aqui 2</a>
+  <header>
+    <img src="negocio.jpg" alt="Descripción de tu imagen" style="float:left;width:200px;height:150px;">
+    <div align="center"><h1>Jh Sublimaciones</h1></div>
+  </header>
+    <nav class="menu" style="float: left; margin-right: 30px;">
+      <ul>
+         <li><a href="#products" onclick="Salir()">Salir</a></li>
+         <li><a href="#sudaderas" >Sudaderas</a></li>
+         <li><a href="#libretas">Libretas</a></li>
+         <li><a href="#camisas">Camisas</a></li>
+         <li><a href="#fundas">Fundas</a></li>
+         <li><a href="#tazas">Tazas</a></li>
+         <li><a href="http://localhost/trabajo/correo.html">Dudas</a></li>
+      </ul>
+    </nav>
+  <main class="container">
+    <section id="inicio">
+      <h1>Bienvenidos a nuestra tienda de Sublimaciones</h1>
+      <h3><p>Personalizamos todo tipo de articulo contamos con camisetas y Sudaderas para todas las edades, Tazas, Vasos, lonas, llaveros, portaretratos, rompecabezas, portabotes, moños, accessorios para moviles, libretas y accesorios para todas las edades</p></h3>
+      <h3><p>Visita nuestra página de productos para conocer todas nuestras ofertas que tenemos en todos nuestros articulos</p></h3>
+    </section>
+    <section id="sudaderas">
+      <h2>Productos</h2>
+      <div class="producto">
+      <img src="imagen10.jpg" height="700px" alt="Producto 1"><img src="imagen13.jpg" height="700px" alt="Producto 1">
+      <h3>Producto 1</h3>
+      <p>Sudaderas personalizadas</p>
+      <p>Precio: $350</p>
+      </div>
+      <div class="producto" id="libretas">
+      <img src="imagen11.jpg" height="500px" alt="Producto 2">
+      <h3>Producto 2</h3>
+      <p>Libretas personalizadas</p>
+      <p>Precio: $150.00</p>
+      </div>
+      <div class="producto" id="camisas">
+      <img src="imagen12.jpg" height="500px" alt="Producto 3">
+      <h3>Producto 3</h3>
+      <p>Camisetas para todas las edades</p>
+      <p>Precio: $190.00</p>
+      </div>
+      <div class="producto" id="tazas">
+      <img src="imagen14.jpg" height="500px" alt="Producto 3">
+      <h3>Producto 4</h3>
+      <p>Tazas personalizadas</p>
+      <p>Tazas $90 tazas mágicas $150 Tazas jumbo $170</p>
+      </div>
+      <div class="producto" id="fundas">
+      <img src="imagen15.jpg" height="500px" alt="Producto 3">
+      <h3>Producto 5</h3>
+      <p>Fundas de celular personalizadas</p>
+      <p>Fundas para celular con pedrería $400</p>
+      </div>
+       <section id="contacto">
+         <h2 id="contacto">Contactanos en:</h2>
+            <div class="iconos">
+        <div class="border-icon" style="margin-right: 30px;">
+            <i class='bx bxl-instagram' ></i>
+        </div>
+        <div class="border-icon" style="margin-right: 30px;">
+            <i class='bx bxl-linkedin' ></i>
+        </div>
+        <div class="border-icon" style="margin-right: 30px;">
+            <i class='bx bxl-facebook-circle' ></i>
+        </div>
+        <h2>Como @Jh Sublimaciones</h2>
+      </div>
+    </section>
+    </section>
+</main>
 </body>
 </html>
