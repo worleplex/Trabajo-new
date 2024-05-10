@@ -10,44 +10,37 @@
   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
   <div style="background-color: #f2f2f2; padding: 20px;">
       <style>
-    body {
-      font-family: 'Roboto', sans-serif;
+   <style>
+body {
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
     }
     header {
       background-color: #333;
       color: #FFD700;
-      padding: 2em;
-      text-align: center;
+      padding: 40px;
     }
-    nav {
-      background: #1FA2FF;  
-      background: -webkit-linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF); 
-      background: linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);
-      padding: 1em;
-      text-align: center;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
+    h1, h2, h3{
       margin: 0;
-    }
-    nav a {
-      color: #0074D9;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 15px;
-      padding: 0.5em 1em;
-      transition: all 0.3s ease;
-    }
-    nav a:hover {
-      color: #FFF;
-      background-color: #0074D9;
-      border-radius: 5px;
+      padding: 0;
     }
     .container {
       margin: 20px;
+    }
+    /* Estilos específicos para cada página */
+    .productos img {
+      max-width: 100%;
+    }
+    .contacto form {
+      margin-top: 20px;
+    }
+    .contacto label, .contacto input, .contacto textarea {
+      display: block;
+      margin-bottom: 10px;
+    }
+    p {
+      line-height: 1.5; /* aumentar el espacio entre reglones*/
     }
     .producto {
       border: 1px solid #ccc;
@@ -56,39 +49,216 @@
       margin-bottom: 20px;
     }
     .producto img {
-      max-width: 100%;
+      width: 50%;
       border-radius: 5px;
       margin-bottom: 10px;
     }
-    .iconos {
+    p {
+    /*text-align:left;*/
+    color: Black;
+    padding: 12px;
+  
+    }
+    #formulario {
+      display: none;
+    }
+    #formulario2{
+      display: none;
+    }
+    #formulario3{
+      display: none;
+    }
+    #formulario4{
+      display: none;
+    }
+    #formulario5{
+      display: none;
+    }
+    body{
+      height: 100%; 
+      font-family: sans-serif;
+    }
+    button, input, select, textarea {
+      font-family: inherit; /* hace que el valor de la propiedad coincida con el valor calculado 
+      de la propiedad de su elemento principal; hereda el valor del padre.*/
+      font-size: 100%;
+    }
+    .contact_form{  
+      width: 500px; 
+      height: auto;
+      margin: auto; /*centra horizontalmente*/
+      border-radius: 10px;  
+      padding-top: 20px;
+      padding-bottom: 20px;  
+      background-color: #fbfbfb; 
+      padding-left: 15px; 
+    }
+    input{
+      background-color: #fbfbfb; 
+      width: 200px; 
+      height: 20px; 
+      border-radius: 5px;  
+      border-style: solid; 
+      border-width: 1px; 
+      border-color: #ab4493; 
+      margin-top: 10px;   
+      padding-left: 10px;
+      margin-bottom: 20px; 
+    }
+    .menu {
+      position: relative;
+      background: #1FA2FF;  
+      background: -webkit-linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF); 
+      background: linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);   
+      width: 3em;
+      height: 3em;
+      border-radius: 5em;
+      cursor: pointer;
+      border: 1em solid  #ff0101;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 20px;
+      font-size: 15px;
+    }  
+    .menu:after {
+      content: "";
+      position: absolute;
+      top: 1em;
+      left: 1em;
+      width: 1em;
+      height: 0.2em;
+      border-top: 0.6em double #fff;
+      border-bottom: 0.2em solid #fff;
+    }
+    .menu ul {
+      list-style: none;
+      padding: 0;
+    }
+    .menu li {
+      width: 5em;
+      height: 1.4em;
+      padding: 0.2em;
+      margin-top: 0.2em;
+      text-align: center;
+      border-top-right-radius: 0.5em;
+      border-bottom-right-radius: 0.5em;
+      transition: all 1s;
+      background: #e83737; 
+      opacity: 0;
+      z-index: -1;
+    }
+    .menu:hover li {
+      opacity: 1;
+    }
+    .menu:hover ul::before {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 0;
+      display: block;
+      left: -5.5em;
+      top: -5.0em;
+      border-width: 6.5em;
+      border-radius: 7.5em 0 0 7.5em;
+      border-right: 0
+      border-style: solid;
+      border-color: rgba(0,0,0,0.01);
+      z-index: -1;
+      cursor: default;
+    }
+    .menu a {
+      color: white;
+      text-decoration: none;
+      line-height: 1.5em;
+    }
+    .menu a {
+      color: white;
+      text-decoration: none;
+     }
+    .menu ul {
+      transform: rotate(180deg) translateY(-2em);
+      transition: 1s all;
+    }
+    .menu:hover ul {
+      transform: rotate(0deg) translateY(-1em);
+    } 
+    .menu li:hover {
+      background: #3ba7b3;
+      z-index: 10;
+    }
+    .menu li:nth-of-type(1) {
+      transform: rotate(-90deg);
+      position: absolute;
+      left: -1.2em;
+      top: -4.2em;
+    }
+    .menu li:nth-of-type(2) {
+      transform: rotate(-45deg);
+      position: absolute;
+      left: 2em;
+      top: -3em;
+    }
+    .menu li:nth-of-type(3) {
+      position: absolute;
+      left: 3.4em;
+      top: 0.3em;
+    }
+    .menu li:nth-of-type(4) {
+      transform: rotate(45deg);
+      position: absolute;
+      left: 2em;
+      top: 3.7em;
+    }
+    .menu li:nth-of-type(5) {
+      transform: rotate(90deg);
+      position: absolute;
+      left: -1.2em;
+      top: 5em;
+    }
+    .menu li:nth-of-type(6) {
+      transform: rotate(120deg);
+      position: absolute;
+      left: -4em; /* Cambio: Ajusta la posición hacia la izquierda */
+      top: 4.1em;
+    }
+    .menu li:nth-of-type(7) {
+      transform: rotate(150deg);
+      position: absolute;
+      left: -6.1em; /* Cambio: Ajusta la posición hacia la izquierda */
+      top: 2em;
+    }
+    .iconos {
+      width: 200px;
+      display: flex;
+      justify-content: space-around;
+      margin: auto;
     }
     .border-icon {
-      height: 40px;
-      width: 40px;
+      height: 20px;
+      width: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 10px;
-      border: 1px solid #000000;
+      padding: 1.5rem;
+      border: solid thin #000000;
       border-radius: 50%;
       font-size: 1.5rem;
-      transition: all 0.3s ease-in;
+      transition: all .3s ease-in;
     }
     .border-icon:hover {
       background-color: #4a4aee;
       cursor: pointer;
     }
-    @media screen and (max-width: 768px) {
-      .container {
-        margin: 10px;
-      }
-      .producto img {
-        width: 100%;
-      }
+    nav a {
+      display: inline-block;
+      margin: 0 20px;
+      color: #0074D9;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    nav a:hover {
+      color: #FFF;
+      background-color: #0074D9;
+      border-radius: 5px;
     }
         </style>
 </head>
