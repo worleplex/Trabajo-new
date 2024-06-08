@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #CC95C0;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+        }
+
+        .lds-ring,
+        .lds-ring div {
+            box-sizing: border-box;
+        }
+
+        .lds-ring {
+            display: inline-block;
+            position: relative;
+            width: 200px;
+            /* Ancho incrementado */
+            height: 200px;
+            /* Altura incrementada */
+        }
+
+        .lds-ring div {
+            box-sizing: border-box;
+            display: block;
+            position: absolute;
+            width: 150px;
+            /* Ancho incrementado */
+            height: 150px;
+            /* Altura incrementada */
+            margin: 16px;
+            /* Margen ajustado */
+            border: 16px solid currentColor;
+            /* Borde incrementado */
+            border-radius: 50%;
+            animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            border-color: currentColor transparent transparent transparent;
+        }
+
+        .lds-ring div:nth-child(1) {
+            animation-delay: -0.45s;
+        }
+
+        .lds-ring div:nth-child(2) {
+            animation-delay: -0.3s;
+        }
+
+        .lds-ring div:nth-child(3) {
+            animation-delay: -0.15s;
+        }
+
+        @keyframes lds-ring {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <form align="center">
+        <h1>Seleccione cualquier animal para observar el Modelo 3D</h1><br><br>
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </form>
+</body>
+
+</html>
