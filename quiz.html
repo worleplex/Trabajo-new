@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,43 +8,42 @@
     <style>
         body {
             margin: 0;
-            background: #1D4350;
-            background: -webkit-linear-gradient(to right, #A43931, #1D4350);
-            background: linear-gradient(to right, #A43931, #1D4350);
-            overflow: hidden;
+            background: #f8fbfc;
+            background: linear-gradient(to right, #fff5f4, #a2c9d6);
             font-family: Arial, sans-serif;
         }
 
         #wrapper {
-            height: 40vh;
+            height: auto;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-evenly;
+            padding: 10px;
         }
 
         #game {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             justify-content: center;
-            max-width: 600px;
-            max-height: 500px;
+            width: 100%;
+            max-width: 90%;
             margin: auto;
         }
 
         #stats {
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            color: rgb(14, 14, 14);
+            font-size: 1.2rem;
+            margin: 10px 0;
             text-align: center;
             width: 100%;
         }
 
         .card {
-            width: 100px;
-            height: 140px;
-            margin: 10px;
+            width: 90px;
+            height: 120px;
+            margin: 5px;
             position: relative;
             transition: transform 0.5s;
             transform-style: preserve-3d;
@@ -62,58 +62,118 @@
             justify-content: center;
             position: absolute;
             backface-visibility: hidden;
-            pointer-events: none;
         }
 
         .card .face {
-            background: #1A2980;
-            background: -webkit-linear-gradient(to right, #26D0CE, #1A2980);
-            background: linear-gradient(to right, #26D0CE, #1A2980);
+            border: 3px solid #D10064;
+            background-color: #e7a6a5;
             transform: rotateY(180deg);
         }
 
         .card .back {
-            border: 5px solid #d0f502;
-            background: url(https://i.ibb.co/FxYXDQk/juego.jpg) center / contain no-repeat;
+            border: 3px solid #D10064;
+            background: url(https://i.ibb.co/k8NdxQq/Memorama-dise-o.png) center / contain no-repeat;
         }
 
         #button-container {
             display: flex;
             gap: 10px;
-            position: absolute;
-            bottom: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
         }
 
         #start-button,
         #reset-button {
             padding: 10px 20px;
-            font-size: 1.2rem;
+            font-size: 1rem;
             background-color: #d0f502;
             color: #1D4350;
             border: none;
             border-radius: 10px;
             cursor: pointer;
         }
+
+        #header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #bebcbc;
+            padding: 10px 20px;
+            color: white;
+            flex-wrap: wrap;
+        }
+
+        #header img {
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        #return-button {
+            padding: 8px 16px;
+            font-size: 1rem;
+            background-color: #d0f502;
+            color: #1D4350;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        @media (min-width: 768px) {
+            #header {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            #header img {
+                height: 80px;
+                margin-bottom: 0;
+            }
+
+            #stats {
+                font-size: 1.5rem;
+            }
+
+            .card {
+                width: 100px;
+                height: 140px;
+            }
+
+            #button-container {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
+
 <body>
+    <header id="header">
+        <img id="logo" src="https://i.ibb.co/0rPLPGS/Puriware-Logo-removebg-preview.png" alt="Logo">
+        <a id="return-button" href="index.html">Regresar a la página principal</a>
+    </header>
+    <br>
     <div id="stats">0 intentos - Tiempo: <span id="timer">0</span> segundos</div>
     <div id="wrapper">
         <div id="game"></div>
         <div id="button-container">
             <button id="start-button" onclick="startGame()">Comenzar</button>
-            <button id="reset-button" onclick="resetGame()" disabled>Reiniciar</button>
+            <button id="reset-button" onclick="resetGame()" disabled>Nuevo Juego</button>
         </div>
     </div>
     <script>
-        const totalCards = 10;
+        const totalCards = 20;
         const availableCards = [
-            'https://i.ibb.co/WfpwMnb/imagen-2024-11-10-133843116.png',
-            'https://i.ibb.co/Nn7JK6C/imagen-2024-11-10-134532207.png',
-            'https://i.ibb.co/Vv6CgV0/imagen-2024-11-10-135229642.png',
-            'https://i.ibb.co/m66MMMF/imagen-2024-11-10-135447760.png',
-            'https://i.ibb.co/WzVRjDk/imagen-2024-11-11-065636148.png'
-            
+            'https://i.ibb.co/3kqPj2w/imagen1-removebg-preview.png',
+            'https://i.ibb.co/k2XrjCB/imagen2-removebg-preview.png',
+            'https://i.ibb.co/vcWHDNk/imagen3-removebg-preview.png',
+            'https://i.ibb.co/bJqTXQS/imagen4-removebg-preview.png',
+            'https://i.ibb.co/8NdHWky/imagen5-removebg-preview-1.png',
+            'https://i.ibb.co/gDc5D22/imagen6-removebg-preview.png',
+            'https://i.ibb.co/YZWnHtd/imagen7-removebg-preview.png',
+            'https://i.ibb.co/zGVfd5h/imagen8-removebg-preview-2.png',
+            'https://i.ibb.co/q12Kbv4/imagen9-removebg-preview.png',
+            'https://i.ibb.co/LY8jkcC/imagen10-removebg-preview.png'
         ];
 
         let cards = [];
@@ -191,7 +251,7 @@
                 let div = document.createElement('div');
                 div.classList.add('card');
                 div.innerHTML = `<div class="back"></div><div class="face"></div>`;
-                
+
                 let img = document.createElement('img');
                 img.src = value;
                 img.alt = 'Imagen de Carta';
@@ -220,4 +280,3 @@
     </script>
 </body>
 </html>
-
