@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de desarrollo de Prototipos</title>
+    <style>
+        /* Estilo general del cuerpo */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            margin-right: 30px;
+            margin-left: 20px;
+        }
+
+        /* Configuración de diseño con Grid */
+        .container {
+            display: grid;
+            grid-template-areas:
+                "imagen container2"
+                "imagen info2";
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .imagen {
+            grid-area: imagen;
+            background-color: #bebcbc;
+            border-radius: 10px;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .imagen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ajusta la imagen sin distorsión */
+        }
+
+        /* Contenedor del título e información */
+        .container2 {
+            grid-area: container2;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .titulo {
+            background-color: #d0d0d0;
+            border-radius: 10px;
+            padding: 10px;
+            font-weight: bold;
+            text-align: left;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .info1 {
+            background-color: #fff;
+            border: 1px solid #bebcbc;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: left;
+            font-size: 1rem;
+            line-height: 1.5; /* Mejora la legibilidad */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: justify;
+        }
+
+        .info2 {
+            grid-area: info2;
+            background-color: #fff;
+            border: 1px solid #bebcbc;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: left;
+            font-size: 1rem;
+            line-height: 1.5;
+            text-align: justify;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsividad para pantallas pequeñas */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-areas:
+                    "container2"
+                    "imagen"
+                    "info2";
+                grid-template-columns: 1fr;
+            }
+
+            .titulo {
+                font-size: 1rem; /* Ajusta el tamaño para pantallas pequeñas */
+            }
+
+            .info1,
+            .info2 {
+                font-size: 0.8rem; /* Texto más pequeño para dispositivos móviles */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Imagen -->
+        <div class="imagen">
+            <img src="https://i.ibb.co/7t6zR0J/imagen-2024-11-17-221320535.png" alt="Imagen del modelo">
+        </div>
+
+        <!-- Contenedor de título e información -->
+        <div class="container2">
+            <div class="titulo" style="text-align: center;">Modelo RUP</div>
+            <div class="info1">RUP es una metodología que tiene como objetivo ordenar y estructurar el 
+                desarrollo de software. El cual contiene fases iterativas y son diseñadas para la creación 
+                de proyectos complejos.<br>
+                RUP tienen diferentes principios fundamentales y estos son: Desarrollo Iterativo, Gestión de 
+                Requisitos, Arquitectura basada en componentes y Pruebas continuas. El Desarrollo iterativo 
+                permite hacer ajustes al avanzar con el proyecto, la Gestión de requisitos define todo lo que 
+                se va a necesitar desde un inicio, la Arquitectura es la estructura para facilitar la creación 
+                del producto y las Pruebas nos aseguran una buena calidad para el cliente.
+                <br>Los roles principales y específicos de RUP son iguales que Prototipos: Analista quien recopila toda la información inicial requerida por cliente, Diseñador quien va creando la estructura del proyecto, el Codificador es quien implementa toda información recopilada, los Tester y Gestores del proyecto son quienes se encargan de probar la buena funcionalidad del programa y supervisan el avance y cumplimiento de plazos.
+
+            </div>
+        </div>
+    </div>
+    <!-- Información adicional -->
+    <div class="info2">Las fases utilizadas en esta metodología son las siguientes: Fase de Inicio, Fase de Elaboración, Fase de Construcción y Fase de Transición.
+        <br>Beneficios de RUP para estudiantes de doctorado: 
+        <br>Reduce los riesgos del proyecto desde etapas tempranas.
+        <br>Tiene una buena calidad por las constantes revisiones y pruebas.
+        <br>Es adaptable según el proyecto. 
+        <br>Facilita la documentación de resultados.
+        
+    </div>
+    <footer
+        style="background-color: #383333; color: rgb(255, 255, 255); padding: 20px 10px; text-align: center; margin-top: 20px; border-top: 2px solid #d0d0d0;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; align-items: center;">
+            <!-- Información del copyright -->
+            <div>
+                <p style="margin: 5px 0;">&copy; 2024 Modelos de Desarrollo. Todos los derechos reservados.</p>
+            </div>
+        </div>
+
+        <!-- Información de contacto -->
+        <div style="margin-top: 10px;">
+            <p style="margin: 5px 0;">Contacto: <a href="mailto:info@modelosdesarrollo.com"
+                    style="color: #d0f502; text-decoration: none;">blogisw@gmail.com</a></p>
+            <p style="margin: 5px 0;">Teléfono: +52 999 999 9999</p>
+        </div>
+    </footer>
+</body>
+</html>
