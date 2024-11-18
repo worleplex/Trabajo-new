@@ -1,335 +1,285 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Negocio de sublimaciones</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-  <div style="background-color: #f2f2f2; padding: 20px;">
-      <style>
-   <style>
-body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #333;
-      color: #FFD700;
-      padding: 40px;
-    }
-    h1, h2, h3{
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      margin: 20px;
-    }
-    /* Estilos específicos para cada página */
-    .productos img {
-      max-width: 100%;
-    }
-    .contacto form {
-      margin-top: 20px;
-    }
-    .contacto label, .contacto input, .contacto textarea {
-      display: block;
-      margin-bottom: 10px;
-    }
-    p {
-      line-height: 1.5; /* aumentar el espacio entre reglones*/
-    }
-    .producto {
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      padding: 10px;
-      margin-bottom: 20px;
-    }
-    .producto img {
-      width: 50%;
-      border-radius: 5px;
-      margin-bottom: 10px;
-    }
-    p {
-    /*text-align:left;*/
-    color: Black;
-    padding: 12px;
-  
-    }
-    #formulario {
-      display: none;
-    }
-    #formulario2{
-      display: none;
-    }
-    #formulario3{
-      display: none;
-    }
-    #formulario4{
-      display: none;
-    }
-    #formulario5{
-      display: none;
-    }
-    body{
-      height: 100%; 
-      font-family: sans-serif;
-    }
-    button, input, select, textarea {
-      font-family: inherit; /* hace que el valor de la propiedad coincida con el valor calculado 
-      de la propiedad de su elemento principal; hereda el valor del padre.*/
-      font-size: 100%;
-    }
-    .contact_form{  
-      width: 500px; 
-      height: auto;
-      margin: auto; /*centra horizontalmente*/
-      border-radius: 10px;  
-      padding-top: 20px;
-      padding-bottom: 20px;  
-      background-color: #fbfbfb; 
-      padding-left: 15px; 
-    }
-    input{
-      background-color: #fbfbfb; 
-      width: 200px; 
-      height: 20px; 
-      border-radius: 5px;  
-      border-style: solid; 
-      border-width: 1px; 
-      border-color: #ab4493; 
-      margin-top: 10px;   
-      padding-left: 10px;
-      margin-bottom: 20px; 
-    }
-    .menu {
-      position: relative;
-      background: #1FA2FF;  
-      background: -webkit-linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF); 
-      background: linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);   
-      width: 3em;
-      height: 3em;
-      border-radius: 5em;
-      cursor: pointer;
-      border: 1em solid  #ff0101;
-      display: flex;
-      font-size: 15px;
-    }  
-    .menu:after {
-      content: "";
-      position: absolute;
-      top: 1em;
-      left: 1em;
-      width: 1em;
-      height: 0.2em;
-      border-top: 0.6em double #fff;
-      border-bottom: 0.2em solid #fff;
-    }
-    .menu ul {
-      list-style: none;
-      padding: 0;
-    }
-    .menu li {
-      width: 5em;
-      height: 1.4em;
-      padding: 0.2em;
-      margin-top: 0.2em;
-      text-align: center;
-      border-top-right-radius: 0.5em;
-      border-bottom-right-radius: 0.5em;
-      transition: all 1s;
-      background: #e83737; 
-      opacity: 0;
-      z-index: -1;
-    }
-    .menu:hover li {
-      opacity: 1;
-    }
-    .menu:hover ul::before {
-      position: absolute;
-      content: "";
-      width: 0;
-      height: 0;
-      display: block;
-      left: -5.5em;
-      top: -5.0em;
-      border-width: 6.5em;
-      border-radius: 7.5em 0 0 7.5em;
-      border-right: 0
-      border-style: solid;
-      border-color: rgba(0,0,0,0.01);
-      z-index: -1;
-      cursor: default;
-    }
-    .menu a {
-      color: white;
-      text-decoration: none;
-      line-height: 1.5em;
-    }
-    .menu a {
-      color: white;
-      text-decoration: none;
-     }
-    .menu ul {
-      transform: rotate(180deg) translateY(-2em);
-      transition: 1s all;
-    }
-    .menu:hover ul {
-      transform: rotate(0deg) translateY(-1em);
-    } 
-    .menu li:hover {
-      background: #3ba7b3;
-      z-index: 10;
-    }
-    .menu li:nth-of-type(1) {
-      transform: rotate(-90deg);
-      position: absolute;
-      left: -1.2em;
-      top: -4.2em;
-    }
-    .menu li:nth-of-type(2) {
-      transform: rotate(-45deg);
-      position: absolute;
-      left: 2em;
-      top: -3em;
-    }
-    .menu li:nth-of-type(3) {
-      position: absolute;
-      left: 3.4em;
-      top: 0.3em;
-    }
-    .menu li:nth-of-type(4) {
-      transform: rotate(45deg);
-      position: absolute;
-      left: 2em;
-      top: 3.7em;
-    }
-    .menu li:nth-of-type(5) {
-      transform: rotate(90deg);
-      position: absolute;
-      left: -1.2em;
-      top: 5em;
-    }
-    .menu li:nth-of-type(6) {
-      transform: rotate(120deg);
-      position: absolute;
-      left: -4em; /* Cambio: Ajusta la posición hacia la izquierda */
-      top: 4.1em;
-    }
-    .menu li:nth-of-type(7) {
-      transform: rotate(150deg);
-      position: absolute;
-      left: -6.1em; /* Cambio: Ajusta la posición hacia la izquierda */
-      top: 2em;
-    }
-    .iconos {
-      width: 200px;
-      display: flex;
-      justify-content: space-around;
-      margin: auto;
-    }
-    .border-icon {
-      height: 20px;
-      width: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-      border: solid thin #000000;
-      border-radius: 50%;
-      font-size: 1.5rem;
-      transition: all .3s ease-in;
-    }
-    .border-icon:hover {
-      background-color: #4a4aee;
-      cursor: pointer;
-    }
-    nav a {
-      display: inline-block;
-      margin: 0 20px;
-      color: #0074D9;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 15px;
-    }
-    nav a:hover {
-      color: #FFF;
-      background-color: #0074D9;
-      border-radius: 5px;
-    }
-        </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos de Desarrollo: con los jefes de jefes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .button {
+            background-color: #d9d9d9;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .intro {
+            width: 300px;
+            height: auto;
+            border: 1px solid rgb(255, 255, 255);
+            padding: 10px;
+            text-align: justify;
+        }
+
+        .image-box {
+            flex-grow: 1;
+            background-color: #d9d9d9;
+            display: flex;
+            flex-direction: column;
+            /* Asegura que los elementos estén en columna */
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+            text-align: center;
+            border-radius: 20px;
+            padding: 10px;
+            /* Espaciado interno */
+        }
+
+        .image-box img {
+            max-width: 100%;
+            /* Asegura que la imagen no exceda el ancho del contenedor */
+            height: auto;
+            /* Mantiene la proporción de la imagen */
+            margin-bottom: 10px;
+            /* Margen entre imágenes */
+            border-radius: 10px;
+            /* Opcional: para darle bordes redondeados a las imágenes */
+        }
+
+        .image-box img:last-child {
+            margin-bottom: 0;
+            /* Elimina el margen para la última imagen */
+        }
+
+        #header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #bebcbc;
+            padding: 10px 20px;
+            color: white;
+            flex-wrap: wrap;
+        }
+
+        #header img {
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        #return-button {
+            padding: 4px 7px;
+            font-size: 1rem;
+            background-color: #11296b;
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: small;
+        }
+
+        /* Estilo para el icono del menú (las tres barras) */
+        .btn-menu {
+            margin-left: 2px;
+            /* Reducir aún más el espacio entre el ícono y el cuadro de búsqueda */
+        }
+
+        .btn-menu label {
+            font-size: 25px;
+            cursor: pointer;
+            color: black;
+            z-index: 2;
+            /* Asegura que el botón del menú está por encima del contenedor */
+            position: relative;
+        }
+
+        /* Menú lateral */
+        #btn-menu {
+            display: none;
+        }
+
+        .container-menu {
+            position: fixed;
+            background: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            right: 0;
+            /* Cambia de left a right */
+            transition: all 500ms ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 9999;
+            /* Asegura que el menú está siempre visible sobre otros elementos */
+        }
+
+        #btn-menu:checked~.container-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cont-menu {
+            width: 100%;
+            max-width: 250px;
+            background: #E6CCB3;
+            /* Aqui es el color del menu de las 3 barras */
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            /* Asegurar que el menú empieza desde la parte superior de la página */
+            right: 0;
+            /* Cambiar de left a right */
+            transition: all 500ms ease;
+            transform: translateX(100%);
+            /* Cambiar para que se desplace desde la derecha */
+            z-index: 10000;
+            /* Asegurar que el menú lateral esté por encima del encabezado */
+        }
+
+        #btn-menu:checked~.container-menu .cont-menu {
+            transform: translateX(0%);
+        }
+
+        .cont-menu nav a {
+            display: block;
+            text-decoration: none;
+            padding: 20px;
+            color: black;
+            border-right: 5px solid transparent;
+            /* Cambiar de left a right para el borde */
+            transition: all 400ms ease;
+        }
+
+        .cont-menu nav a:hover {
+            border-right: 5px solid #c7c7c7;
+            /* Cambiar de left a right para el borde */
+            background: #8A827E;
+        }
+
+        .cont-menu label {
+            position: absolute;
+            left: 10px;
+            /* Cambiar de right a left para que la &#39;X&#39; esté a la izquierda */
+            top: 10px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 10001;
+            /* Asegurar que la &quot;X&quot; está siempre visible y por encima de todos los elementos */
+        }
+    </style>
 </head>
+
 <body>
-  <header>
-    <img src="negocio.jpg" alt="Descripción de tu imagen" style="float:left;width:200px;height:150px;">
-    <div align="center"><h1>Jh Sublimaciones</h1></div>
-  </header>
-    <nav class="menu" style="float: left; margin-right: 30px;">
-      <ul>
-         <li><a href="#sudaderas" >Sudaderas</a></li>
-         <li><a href="#libretas">Libretas</a></li>
-         <li><a href="#camisas">Camisas</a></li>
-         <li><a href="#fundas">Fundas</a></li>
-         <li><a href="#tazas">Tazas</a></li>
-      </ul>
-    </nav>
-  <main class="container">
-    <section id="inicio">
-      <h1>Bienvenidos a nuestra tienda de Sublimaciones</h1>
-      <h3><p>Personalizamos todo tipo de articulo contamos con camisetas y Sudaderas para todas las edades, Tazas, Vasos, lonas, llaveros, portaretratos, rompecabezas, portabotes, moños, accessorios para moviles, libretas y accesorios para todas las edades</p></h3>
-      <h3><p>Visita nuestra página de productos para conocer todas nuestras ofertas que tenemos en todos nuestros articulos</p></h3>
-    </section>
-    <section id="sudaderas">
-      <h2>Productos</h2>
-      <div class="producto">
-      <img src="imagen10.jpg" height="700px" alt="Producto 1">
-      <h3>Producto 1</h3>
-      <p>Sudaderas personalizadas</p>
-      <p>Precio: $350</p>
-      </div>
-      <div class="producto" id="libretas">
-      <img src="imagen11.jpg" height="500px" alt="Producto 2">
-      <h3>Producto 2</h3>
-      <p>Libretas personalizadas</p>
-      <p>Precio: $150.00</p>
-      </div>
-      <div class="producto" id="camisas">
-      <img src="imagen12.jpg" height="500px" alt="Producto 3">
-      <h3>Producto 3</h3>
-      <p>Camisetas para todas las edades</p>
-      <p>Precio: $190.00</p>
-      </div>
-      <div class="producto" id="tazas">
-      <img src="imagen14.jpg" height="500px" alt="Producto 3">
-      <h3>Producto 4</h3>
-      <p>Tazas personalizadas</p>
-      <p>Tazas $90 tazas mágicas $150 Tazas jumbo $170</p>
-      </div>
-      <div class="producto" id="fundas">
-      <img src="imagen15.jpg" height="500px" alt="Producto 3">
-      <h3>Producto 5</h3>
-      <p>Fundas de celular personalizadas</p>
-      <p>Fundas para celular con pedrería $400</p>
-      </div>
-       <section id="contacto">
-         <h2 id="contacto">Contactanos en:</h2>
-            <div class="iconos">
-        <div class="border-icon" style="margin-right: 30px;">
-            <i class='bx bxl-instagram' ></i>
+    <header id="header">
+        <img id="logo" src="https://i.ibb.co/0rPLPGS/Puriware-Logo-removebg-preview.png" alt="Logo">
+        <a id="return-button" href="modelo_de_desarrollo_1.html">Modelo 1</a>
+        <a id="return-button" href="modelo_de_desarrollo_2.html">Modelo 2</a>
+        <a id="return-button" href="modelo_de_desarrollo_3.html">Modelo 3</a>
+
+        <!-- Icono del menú (tres barras) -->
+        <div class='btn-menu'>
+            <label for='btn-menu'>&#9776;</label>
         </div>
-        <div class="border-icon" style="margin-right: 30px;">
-            <i class='bx bxl-linkedin' ></i>
+
+
+        <!-- Menú lateral -->
+        <input id='btn-menu' type='checkbox' />
+
+        <div class='container-menu'>
+            <div class='cont-menu'>
+                <nav>
+                    <br>
+                    <br>
+                    <a href='https://x.com/blogisw?s=11'>
+                        <img alt='X Logo' src='https://i.ibb.co/1QYT6mZ/a74d9556-b63f-4993-b65e-d9260f3d3266.jpg'
+                            style='width: 30px; height: 20px; vertical-align: middle; margin-right: 5px;' /> X
+                    </a>
+                    <a href='https://www.instagram.com/puriware_ig/profilecard/?igsh=OGVia2ZlaGs4ZHJn'>
+                        <img alt='Instagram Logo'
+                            src='https://i.ibb.co/FmS2VJk/81e6bcdb-5f97-4c71-9d11-60110d43fe64.jpg'
+                            style='width: 23px; height: 20px; vertical-align: middle; margin-right: 5px;' /> Instagram
+                    </a>
+                    <a href='https://www.linkedin.com/in/puriware-empress-75578b331'>
+                        <img alt='LinkedIn Logo' src='https://i.ibb.co/myrdVK7/9f0b1f9d-7fa4-46d1-b86c-21e2dc704465.jpg'
+                            style='width: 23px; height: 20px; vertical-align: middle; margin-right: 5px;' /> LinkedIn
+                    </a>
+                    <a href="">
+                        <img alt='memorama Logo' src='https://i.ibb.co/gJYJtxj/imagen-2024-11-17-223348828.png'
+                            style='width: 23px; height: 20px; vertical-align: middle; margin-right: 5px;' /> Memorama
+                    </a>
+                    <a href="">
+                        <img alt='memorama Logo' src='https://i.ibb.co/wzdSPnL/imagen-2024-11-17-223458380.png'
+                            style='width: 23px; height: 20px; vertical-align: middle; margin-right: 5px;' /> Quiz
+                    </a>
+                </nav>
+                <!-- Este label cierra el menú -->
+                <label for='btn-menu'>&#10006;&#65039;</label>
+            </div>
         </div>
-        <div class="border-icon" style="margin-right: 30px;">
-            <i class='bx bxl-facebook-circle' ></i>
+    </header>
+    <br>
+    <div class="container">
+        <div class="sidebar">
+            <div class="button">Modelos de Desarrollo: con los jefes de jefes</div>
+            <br>
+            <div class="intro">
+                El sitio web fue creado con el fin de apoyar a estudiantes de doctorado que buscan 
+                profundizar su conocimiento en el campo del software. 
+                Gracias a este sitio será más sencillo para todos aquellos alumnos que busquen información 
+                confiable y relevante sobre las metodologías de desarrollo de software, conociendo las fases, 
+                ventajas y desventajas de cada uno de los modelos existentes en el sitio.
+                <br><br>
+                El objetivo es que los estudiantes puedan acceder a contenido actualizado y confiable, que les 
+                permita no solo entender cómo funcionan las metodologías, sino también entender sobre como 
+                funcionan ya hablando en el contexto de implementación de la vida real.
+            </div>
         </div>
-      </div>
-    </section>
-    </section>
-</main>
-  <a href=modelo.html>Haz click aqui</a>
+        <div class="image-box">
+            <img src="https://i.ibb.co/Zggjr1V/imagen-2024-11-17-190318493.png">
+            <img src="https://i.ibb.co/wNzmVBm/imagen-2024-11-17-185421576.png">
+        </div>
+    </div>
+    <footer
+        style="background-color: #383333; color: rgb(255, 255, 255); padding: 20px 10px; text-align: center; margin-top: 20px; border-top: 2px solid #d0d0d0;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; align-items: center;">
+            <!-- Información del copyright -->
+            <div>
+                <p style="margin: 5px 0;">&copy; 2024 Modelos de Desarrollo. Todos los derechos reservados.</p>
+            </div>
+        </div>
+
+        <!-- Información de contacto -->
+        <div style="margin-top: 10px;">
+            <p style="margin: 5px 0;">Contacto: <a href="mailto:info@modelosdesarrollo.com"
+                    style="color: #d0f502; text-decoration: none;">blogisw@gmail.com</a></p>
+            <p style="margin: 5px 0;">Teléfono: +52 999 999 9999</p>
+        </div>
+    </footer>
 </body>
+
 </html>
