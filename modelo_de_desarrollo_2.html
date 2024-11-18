@@ -15,6 +15,32 @@
             margin-right: 30px;
             margin-left: 20px;
         }
+                #header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #bebcbc;
+            padding: 10px 20px;
+            color: white;
+            flex-wrap: wrap;
+        }
+
+        #header img {
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        #return-button {
+            padding: 8px 16px;
+            font-size: 1rem;
+            background-color: #E6CCB3;
+            color: #1D4350;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+        }
 
         /* Configuración de diseño con Grid */
         .container {
@@ -109,6 +135,10 @@
 </head>
 
 <body>
+    <header id="header">
+        <img id="logo" src="https://i.ibb.co/0rPLPGS/Puriware-Logo-removebg-preview.png" alt="Logo">
+        <a id="return-button" href="index.html">Regresar a la página principal</a>
+    </header>
     <div class="container">
         <!-- Contenedor de título e información -->
         <div class="container2">
