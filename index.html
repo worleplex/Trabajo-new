@@ -286,7 +286,7 @@
             <p style="margin: 5px 0;">Teléfono: +52 999 999 9999</p>
         </div>
     </footer>
-     <script>
+    <script>
         const originalText1 = `El sitio web fue creado con el fin de apoyar a estudiantes de doctorado que buscan
 profundizar su conocimiento en el campo del software.
 Gracias a este sitio será más sencillo para todos aquellos alumnos que busquen información
@@ -309,6 +309,7 @@ but also to understand how they function in real-world implementation contexts.`
         function translateText() {
             const introText1 = document.querySelector('.intro-text1'); // Seleccionamos el primer párrafo
             const introText2 = document.querySelector('.intro-text2'); // Seleccionamos el segundo párrafo
+            const translateButton = document.getElementById('translate-button'); // Botón de traducción
 
             // Alternamos el contenido de los dos párrafos
             introText1.textContent = isOriginalText ? translatedText1 : originalText1;
