@@ -199,7 +199,7 @@
         <a id="return-button" href="modelo_de_desarrollo_1.html">Scrum</a>
         <a id="return-button" href="modelo_de_desarrollo_2.html">Prototipos</a>
         <a id="return-button" href="modelo_de_desarrollo_3.html">RUP</a>
-        <button id="translate-button" class="button" onclick="translateText()">Traducir a ingles</button>
+        <button id="translate-button" class="button" onclick="translateText()">Translate to English</button>
 
         <!-- Icono del menú (tres barras) -->
         <div class='btn-menu'>
@@ -224,9 +224,9 @@
                         <img alt='memorama Logo' src='https://i.ibb.co/gJYJtxj/imagen-2024-11-17-223348828.png'
                             style='width: 23px; height: 20px; vertical-align: middle; margin-right: 5px;' /> Memorama de <br>Prototipos
                     </a>
-                    <a href="">
+                    <a href="https://create.kahoot.it/share/modelos-de-desarrollo/634decef-f9ba-4562-bb15-4c96afa7ecde">
                         <img alt='memorama Logo' src='https://i.ibb.co/wzdSPnL/imagen-2024-11-17-223458380.png'
-                            style='width: 23px; height: 20px; vertical-align: middle; margin-right: 5px;' /> Quiz
+                            style='width: 23px; height: 20px; vertical-align: middle; margin-right: 5px;' /> Quiz de los modelos de desarrollo
                     </a>
                     <a href='https://x.com/blogisw?s=11'>
                         <img alt='X Logo' src='https://i.ibb.co/1QYT6mZ/a74d9556-b63f-4993-b65e-d9260f3d3266.jpg'
@@ -313,7 +313,11 @@ but also to understand how they function in real-world implementation contexts.`
             // Alternamos el contenido de los dos párrafos
             introText1.textContent = isOriginalText ? translatedText1 : originalText1;
             introText2.textContent = isOriginalText ? translatedText2 : originalText2;
-
+            if (isOriginalText){
+                translateButton.textContent = "Traducir a español";
+            }else{
+                translateButton.textContent = "Translate to English";
+            }
             isOriginalText = !isOriginalText; // Alternar el estado
         }
 
