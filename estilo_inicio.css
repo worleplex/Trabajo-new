@@ -1,0 +1,179 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button {
+    background-color: #d9d9d9;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.intro {
+    width: 300px;
+    height: auto;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 10px;
+    text-align: justify;
+}
+
+
+.image-box {
+    flex-grow: 1;
+    background-color: #d9d9d9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px;
+    /* Espaciado interno */
+}
+
+.image-box img {
+    width: 95%;
+    height: 300px;
+    /* Ajusta la imagen para cubrir el espacio sin deformarse */
+    margin-bottom: 10px;
+    /* Espaciado entre imágenes */
+    border-radius: 10px;
+    /* Opcional: bordes redondeados */
+}
+
+
+
+#header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #bebcbc;
+    padding: 10px 20px;
+    color: white;
+    flex-wrap: wrap;
+}
+
+#header img {
+    height: 60px;
+    margin-right: 10px;
+}
+
+#return-button {
+    background-color: #d9d9d9;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-size: small;
+}
+
+/* Estilo para el icono del menú (las tres barras) */
+.btn-menu {
+    margin-left: 2px;
+    /* Reducir aún más el espacio entre el ícono y el cuadro de búsqueda */
+}
+
+.btn-menu label {
+    font-size: 25px;
+    cursor: pointer;
+    color: black;
+    z-index: 2;
+    /* Asegura que el botón del menú está por encima del contenedor */
+    position: relative;
+}
+
+/* Menú lateral */
+#btn-menu {
+    display: none;
+}
+
+.container-menu {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    /* Cambia de left a right */
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9999;
+    /* Asegura que el menú está siempre visible sobre otros elementos */
+}
+
+#btn-menu:checked~.container-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cont-menu {
+    width: 100%;
+    max-width: 250px;
+    background: #E6CCB3;
+    /* Aqui es el color del menu de las 3 barras */
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    /* Asegurar que el menú empieza desde la parte superior de la página */
+    right: 0;
+    /* Cambiar de left a right */
+    transition: all 500ms ease;
+    transform: translateX(100%);
+    /* Cambiar para que se desplace desde la derecha */
+    z-index: 10000;
+    /* Asegurar que el menú lateral esté por encima del encabezado */
+}
+
+#btn-menu:checked~.container-menu .cont-menu {
+    transform: translateX(0%);
+}
+
+.cont-menu nav a {
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    color: black;
+    border-right: 5px solid transparent;
+    /* Cambiar de left a right para el borde */
+    transition: all 400ms ease;
+}
+
+.cont-menu nav a:hover {
+    border-right: 5px solid #c7c7c7;
+    /* Cambiar de left a right para el borde */
+    background: #8A827E;
+}
+
+.cont-menu label {
+    position: absolute;
+    left: 10px;
+    /* Cambiar de right a left para que la &#39;X&#39; esté a la izquierda */
+    top: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10001;
+    /* Asegurar que la &quot;X&quot; está siempre visible y por encima de todos los elementos */
+}
