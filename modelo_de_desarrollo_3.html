@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo de desarrollo de Prototipos</title>
+    <title>Modelo de desarrollo de RUP</title>
     <style>
         /* Estilo general del cuerpo */
         body {
@@ -14,32 +14,6 @@
             background-color: #f9f9f9;
             margin-right: 30px;
             margin-left: 20px;
-        }
-        #header {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            background-color: #bebcbc;
-            padding: 10px 20px;
-            color: white;
-            flex-wrap: wrap;
-        }
-
-        #header img {
-            height: 60px;
-            margin-right: 10px;
-        }
-
-        #return-button {
-            padding: 8px 16px;
-            font-size: 1rem;
-            background-color: #E6CCB3;
-            color: #1D4350;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            text-decoration: none;
         }
 
         /* Configuración de diseño con Grid */
@@ -94,9 +68,35 @@
             padding: 10px;
             text-align: left;
             font-size: 1rem;
-            line-height: 1.5; /* Mejora la legibilidad */
+            line-height: 1,5; /* Mejora la legibilidad */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             text-align: justify;
+        }
+        #header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #bebcbc;
+            padding: 10px 20px;
+            color: white;
+            flex-wrap: wrap;
+        }
+
+        #header img {
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        #return_button {
+            padding: 8px 16px;
+            font-size: 1rem;
+            background-color: #E6CCB3;
+            color: #1D4350;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
         }
 
         .info2 {
@@ -110,6 +110,15 @@
             line-height: 1.5;
             text-align: justify;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .button {
+            background-color: #d9d9d9;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            text-align: center;
+            cursor: pointer;
         }
 
         /* Responsividad para pantallas pequeñas */
@@ -137,7 +146,8 @@
 <body>
     <header id="header">
         <img id="logo" src="https://i.ibb.co/0rPLPGS/Puriware-Logo-removebg-preview.png" alt="Logo">
-        <a id="return-button" href="index.html">Regresar a la página principal</a>
+        <button id="translate-button" class="button" onclick="translateText()">Translate to English</button>
+        <a id="return_button" href="index.html">Regresar a la página principal</a>
     </header>
     <div class="container">
         <!-- Imagen -->
@@ -147,28 +157,57 @@
 
         <!-- Contenedor de título e información -->
         <div class="container2">
-            <div class="titulo" style="text-align: center;">Modelo RUP</div>
-            <div class="info1">RUP es una metodología que tiene como objetivo ordenar y estructurar el 
-                desarrollo de software. El cual contiene fases iterativas y son diseñadas para la creación 
-                de proyectos complejos.<br>
-                RUP tienen diferentes principios fundamentales y estos son: Desarrollo Iterativo, Gestión de 
-                Requisitos, Arquitectura basada en componentes y Pruebas continuas. El Desarrollo iterativo 
-                permite hacer ajustes al avanzar con el proyecto, la Gestión de requisitos define todo lo que 
-                se va a necesitar desde un inicio, la Arquitectura es la estructura para facilitar la creación 
-                del producto y las Pruebas nos aseguran una buena calidad para el cliente.
-                <br>Los roles principales y específicos de RUP son iguales que Prototipos: Analista quien recopila toda la información inicial requerida por cliente, Diseñador quien va creando la estructura del proyecto, el Codificador es quien implementa toda información recopilada, los Tester y Gestores del proyecto son quienes se encargan de probar la buena funcionalidad del programa y supervisan el avance y cumplimiento de plazos.
-
+            <div class="titulo" style="text-align: center;" id="titulo">Modelo 3: RUP</div>
+            <div class="info1">
+                <p id="text1">RUP es una metodología que tiene como objetivo ordenar y estructurar el desarrollo de software, con fases iterativas diseñadas para la creación de proyectos complejos.</p>
+                <p id="text2">RUP tiene diferentes principios fundamentales: Desarrollo Iterativo, Gestión de Requisitos, Arquitectura basada en componentes y Pruebas continuas.</p>
+                <p id="text3">El Desarrollo Iterativo permite hacer ajustes al avanzar con el proyecto.</p>
+                <p id="text3_4">La Gestión de requisitos define todo lo que se va a necesitar desde un inicio.</p>
+                <p id="text3_8">La Arquitectura es la estructura para facilitar la creación del producto.</p>
+                <p id="text3_9">Las Pruebas aseguran una buena calidad para el cliente.</p>
             </div>
         </div>
     </div>
     <!-- Información adicional -->
-    <div class="info2">Las fases utilizadas en esta metodología son las siguientes: Fase de Inicio, Fase de Elaboración, Fase de Construcción y Fase de Transición.
-        <br>Beneficios de RUP para estudiantes de doctorado: 
-        <br>Reduce los riesgos del proyecto desde etapas tempranas.
-        <br>Tiene una buena calidad por las constantes revisiones y pruebas.
-        <br>Es adaptable según el proyecto. 
-        <br>Facilita la documentación de resultados.
-        
+    <div class="info2">
+        <b><p id="text4">Características:</p></b>
+        <p id="text4_2">1. Forma disciplinada de asignar tareas y responsabilidades (quién hace qué, cuándo y cómo).</p>
+        <p id="text4_4">2. Pretende implementar las mejores prácticas en Ingeniería de Software.</p>
+        <p id="text4_6">3. Desarrollo iterativo.</p>
+        <p id="text4_8">4. Administración de requisitos.</p>
+        <p id="text4_9">5. Uso de arquitectura basada en componentes.</p>
+        <p id="text4_10">6. Control de cambios.</p>
+        <p id="text4_11">7. Modelado visual del software.</p>
+
+        <b><p id="text5">Roles en RUP: Los roles principales y específicos de RUP son iguales que Prototipos:</p></b>
+        <p id="text5_2">Analista: recopila toda la información inicial requerida por el cliente.</p>
+        <p id="text5_4">Diseñador: desarrolla la estructura del proyecto.</p>
+        <p id="text5_6">Codificador: implementa toda la información recopilada.</p>
+        <p id="text5_8">Tester y Gestores del proyecto: prueban la funcionalidad del programa y supervisan el avance y cumplimiento de plazos.</p>
+
+        <b><p id="text6">Fases:</p></b>
+        <p id="text6_2">1. Fase de Inicio.</p>
+        <p id="text6_4">2. Fase de Elaboración.</p>
+        <p id="text6_6">3. Fase de Construcción.</p>
+        <p id="text6_8">4. Fase de Transición.</p>
+
+        <b><p id="text7">Beneficios de RUP:</p></b>
+        <p id="text7_2">Reduce los riesgos del proyecto desde etapas tempranas.</p>
+        <p id="text7_4">Garantiza buena calidad gracias a constantes revisiones y pruebas.</p>
+        <p id="text7_6">Es adaptable según el proyecto.</p>
+        <p id="text7_8">Facilita la documentación de resultados.</p>
+
+        <b><p id="text8">Ventajas:</p></b>
+        <p id="text8_2">1. Forma disciplinada de asignar tareas y responsabilidades.</p>
+        <p id="text8_4">2. Mantenimiento más sencillo.</p>
+        <p id="text8_6">3. El conocimiento adquirido en una iteración puede aplicarse a las siguientes iteraciones.</p>
+        <p id="text8_8">4. Los usuarios están involucrados continuamente.</p>
+
+        <b><p id="text9">Desventajas:</p></b>
+        <p id="text9_2">1. Por el grado de complejidad puede no resultar muy adecuado.</p>
+        <p id="text9_4">2. El RUP es generalmente mal aplicado en el estilo cascada.</p>
+        <p id="text9_6">3. Requiere conocimientos del proceso.</p>
+        <p id="text9_8">4. Genera muchos costos.</p>
     </div>
     <footer
         style="background-color: #383333; color: rgb(255, 255, 255); padding: 20px 10px; text-align: center; margin-top: 20px; border-top: 2px solid #d0d0d0;">
@@ -186,5 +225,116 @@
             <p style="margin: 5px 0;">Teléfono: +52 999 999 9999</p>
         </div>
     </footer>
+    <script>
+        const translations = {
+        es: {
+            return_button: "Regresar a la página principal",
+            titulo: "Modelo 3: RUP",
+            text1: "RUP es una metodología que tiene como objetivo ordenar y estructurar el desarrollo de software, con fases iterativas diseñadas para la creación de proyectos complejos.",
+            text2: "RUP tiene diferentes principios fundamentales: Desarrollo Iterativo, Gestión de Requisitos, Arquitectura basada en componentes y Pruebas continuas.",
+            text3: "El Desarrollo Iterativo permite hacer ajustes al avanzar con el proyecto.",
+            text3_4: "La Gestión de requisitos define todo lo que se va a necesitar desde un inicio.",
+            text3_8: "La Arquitectura es la estructura para facilitar la creación del producto.",
+            text3_9: "Las Pruebas aseguran una buena calidad para el cliente.",
+            text4: "Características",
+            text4_2: "1. Forma disciplinada de asignar tareas y responsabilidades (quién hace qué, cuándo y cómo).",
+            text4_4: "2. Pretende implementar las mejores prácticas en Ingeniería de Software.",
+            text4_6: "3. Desarrollo iterativo.",
+            text4_8: "4. Administración de requisitos.",
+            text4_9: "5. Uso de arquitectura basada en componentes.",
+            text4_10: "6. Control de cambios.",
+            text4_11: "7. Modelado visual del software.",
+            text5: "Roles en RUP: Los roles principales y específicos de RUP son iguales que Prototipos:",
+            text5_2: "Analista: recopila toda la información inicial requerida por el cliente.",
+            text5_4: "Diseñador: desarrolla la estructura del proyecto.",
+            text5_6: "Codificador: implementa toda la información recopilada.",
+            text5_8: "Tester y Gestores del proyecto: prueban la funcionalidad del programa y supervisan el avance y cumplimiento de plazos.",
+            text6: "Fases:",
+            text6_2: "1. Fase de Inicio.",
+            text6_4: "2. Fase de Elaboración.",
+            text6_6: "3. Fase de Construcción.",
+            text6_8: "4. Fase de Transición.",
+            text7: "Beneficios de RUP:",
+            text7_2: "Reduce los riesgos del proyecto desde etapas tempranas.",
+            text7_4: "Garantiza buena calidad gracias a constantes revisiones y pruebas.",
+            text7_6: "Es adaptable según el proyecto.",
+            text7_8: "Facilita la documentación de resultados.",
+            text8: "Ventajas:",
+            text8_2: "1. Forma disciplinada de asignar tareas y responsabilidades.",
+            text8_4: "2. Mantenimiento más sencillo.",
+            text8_6: "3. El conocimiento adquirido en una iteración puede aplicarse a las siguientes iteraciones.",
+            text8_8: "4. Los usuarios están involucrados continuamente.",
+            text9: "Desventajas:",
+            text9_2: "1. Por el grado de complejidad puede no resultar muy adecuado.",
+            text9_4: "2. El RUP es generalmente mal aplicado en el estilo cascada.",
+            text9_6: "3. Requiere conocimientos del proceso.",
+            text9_8: "4. Genera muchos costos."
+        },
+        en: {
+            return_button: "Return to the main page",
+            titulo: "Model 3: RUP",
+            text1: "RUP is a methodology aimed at organizing and structuring software development. It includes iterative phases designed for the creation of complex projects.",
+            text2: "RUP is based on several fundamental principles:",
+            text3: "Iterative Development: Allows adjustments as the project progresses.",
+            text3_4: "Requirements Management: Defines all necessary elements from the beginning.",
+            text3_8: "Component-Based Architecture: Provides a structure to facilitate product creation.",
+            text3_9: "Continuous Testing: Ensures high-quality deliverables for the client.",
+            text4: "Characteristics",
+            text4_2: "1. A disciplined approach to assigning tasks and responsibilities (who does what, when, and how).",
+            text4_4: "2. Implements best practices in software engineering.",
+            text4_6: "3. Iterative development.",
+            text4_8: "4. Requirements management.",
+            text4_9: "5. Component-based architecture.",
+            text4_10: "6. Change control.",
+            text4_11: "7. Visual software modeling.",
+            text5: "Roles in RUP: The main and specific roles in RUP are similar to those in Prototyping:",
+            text5_2: "Analyst: Gathers all the initial information required by the client.",
+            text5_4: "Designer: Creates the project's structure.",
+            text5_6: "Coder: implements all gathered information.",
+            text5_8: "Testers and Project Managers: Test the program to ensure its proper functionality and supervise progress and deadlines.",
+            text6: "Phases of RUP:",
+            text6_2: "1. Inception Phase.",
+            text6_4: "2. Elaboration Phase.",
+            text6_6: "3. Construction Phase.",
+            text6_8: "4. Transition Phase.",
+            text7: "Benefits of RUP for Doctoral Students:",
+            text7_2: "Reduces project risks from the early stages.",
+            text7_4: "Ensures high quality through continuous reviews and tests.",
+            text7_6: "Adaptable to the specific needs of each project.",
+            text7_8: "Facilitates documentation of results.",
+            text8: "Advantages of RUP:",
+            text8_2: "1. A disciplined approach to assigning tasks and responsibilities.",
+            text8_4: "2. Easier maintenance.",
+            text8_6: "3. Knowledge gained in one iteration can be applied to subsequent iterations.",
+            text8_8: "4. Continuous user involvement.",
+            text9: "Disadvantages of RUP:",
+            text9_2: "1. Due to its complexity, it may not be suitable for all projects.",
+            text9_4: "2. Often misapplied in a waterfall-like style.",
+            text9_6: "3. Requires a deep understanding of the process.",
+            text9_8: "4. Can result in high costs."
+        }
+    };
+
+    
+        let currentLanguage = 'es'; // Idioma inicial
+    
+        function translateText() {
+            // Alternar idioma
+            currentLanguage = currentLanguage === 'es' ? 'en' : 'es';
+    
+            // Recorrer todas las traducciones
+            for (const id in translations[currentLanguage]) {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.textContent = translations[currentLanguage][id];
+                }
+            }
+    
+            // Cambiar texto del botón
+            document.getElementById('translate-button').textContent =
+                currentLanguage === 'es' ? 'Translate to English' : 'Traducir a español';
+        }
+    </script>
+    
 </body>
 </html>
