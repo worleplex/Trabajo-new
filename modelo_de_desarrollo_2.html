@@ -15,32 +15,6 @@
             margin-right: 30px;
             margin-left: 20px;
         }
-                #header {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            background-color: #bebcbc;
-            padding: 10px 20px;
-            color: white;
-            flex-wrap: wrap;
-        }
-
-        #header img {
-            height: 60px;
-            margin-right: 10px;
-        }
-
-        #return-button {
-            padding: 8px 16px;
-            font-size: 1rem;
-            background-color: #E6CCB3;
-            color: #1D4350;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            text-decoration: none;
-        }
 
         /* Configuración de diseño con Grid */
         .container {
@@ -65,7 +39,8 @@
         .imagen img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ajusta la imagen sin distorsión */
+            object-fit: cover;
+            /* Ajusta la imagen sin distorsión */
         }
 
         /* Contenedor del título e información */
@@ -94,7 +69,8 @@
             padding: 10px;
             text-align: left;
             font-size: 1rem;
-            line-height: 1.5; /* Mejora la legibilidad */
+            line-height: 1.5;
+            /* Mejora la legibilidad */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             text-align: justify;
         }
@@ -112,6 +88,42 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
+        #header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #bebcbc;
+            padding: 10px 20px;
+            color: white;
+            flex-wrap: wrap;
+        }
+
+        #header img {
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        #return_button {
+            padding: 8px 16px;
+            font-size: 1rem;
+            background-color: #E6CCB3;
+            color: #1D4350;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .button {
+            background-color: #d9d9d9;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
         /* Responsividad para pantallas pequeñas */
         @media (max-width: 768px) {
             .container {
@@ -123,12 +135,14 @@
             }
 
             .titulo {
-                font-size: 1rem; /* Ajusta el tamaño para pantallas pequeñas */
+                font-size: 1rem;
+                /* Ajusta el tamaño para pantallas pequeñas */
             }
 
             .info1,
             .info2 {
-                font-size: 0.8rem; /* Texto más pequeño para dispositivos móviles */
+                font-size: 0.8rem;
+                /* Texto más pequeño para dispositivos móviles */
             }
         }
     </style>
@@ -137,51 +151,105 @@
 <body>
     <header id="header">
         <img id="logo" src="https://i.ibb.co/0rPLPGS/Puriware-Logo-removebg-preview.png" alt="Logo">
-        <a id="return-button" href="index.html">Regresar a la página principal</a>
+        <button id="translate-button" class="button" onclick="translateText()">Translate to English</button>
+        <a id="return_button" href="index.html">Regresar a la página principal</a>
     </header>
+    <!-- Contenedor de título e información -->
     <div class="container">
-        <!-- Contenedor de título e información -->
-        <div class="container2">
-            <div class="titulo" style="text-align: center;">Modelo Prototipos</div>
-            <div class="info1">Prototipos es un proceso iterativo el que consiste en el enfoque del diseño, 
-                implementación, medición y ajuste de un plan. Se centra en construir “mini proyectos iniciales” 
-                de un producto o sistema, para empezar con la retroalimentación y perfeccionarlas en iteraciones
-                sucesivas hasta alcanzar la última versión ya bien estructurada.
-                <br>Los prototipos tienen diferentes categorías de organización y estos son representadas como: 
-                Básico, Interactivo y Funcional. El prototipo básico es cuando se hacen los bocetos iniciales 
-                para poder conocer y comentar ideas para su creación. El prototipo interactivo permite crear 
-                simulaciones detalladas que están más cerca de ser la implementación final. Y por último, 
-                tenemos el prototipo funcional que es una versión casi completa del proyecto donde nos muestran 
-                el funcionamiento del producto final.
-                <br>Los roles principales y específicos de Prototipos son: Analista de requisitos es quien recopila toda 
-                la información inicial requerida por cliente para empezar con el trabajo y así en cada iteración hacer 
-                retroalimentaciones, el Diseñador es quien desarrolla la interfaz del prototipo, o sea, crea el diseño 
-                para que el proyecto sea visualmente bueno y sencillo de utilizar y comprender, el Codificador se encarga 
-                de la construcción del prototipo implementando toda la recopilación de información que el analista creó 
-                junto con los detalles que el diseñador hizo, el Integrador como bien dice su nombre integra toda la 
-                información proporcionada haciendo la estructura del proyecto para que este tenga coherencia y sea 
-                sencillo de entender; por último tenemos a los tester y gestores quienes se encargan de probar el 
-                programa y este cumpla con sus funciones específicas sin ningún error. 
-
-
-
-            </div>
-        </div>
-
         <!-- Imagen -->
         <div class="imagen">
             <img src="https://i.ibb.co/421KwTy/imagen-2024-11-17-225447057.png" alt="Imagen del modelo">
         </div>
 
-        
+        <!-- Contenedor de título e información -->
+        <div class="container2">
+            <div class="titulo" style="text-align: center;" id="titulo">Modelo 2: Prototipos</div>
+            <div class="info1">
+                <p id="text1">Los prototipos son modelos de desarrollo de software los cuales se construyen, prueban y
+                    reelaboran hasta que puedan crear un prototipo bueno y aceptable.</p>
+                <P id="text2">Los prototipos tienen diferentes categorías de organización y estos son representadas
+                    como: Básico, Interactivo y Funcional</P>
+                <p id="text3">Prototipo básico es cuando se hacen los bocetos iniciales para poder conocer y comentar
+                    ideas para su creación.
+                <p>
+                <p id="text3_4">Prototipo interactivo permite crear simulaciones detalladas que están más cerca de ser
+                    la implementación final.</p>
+                <p id="text3_8">Prototipo funcional que es una versión casi completa del proyecto donde nos muestran el
+                    funcionamiento del producto final.</p>
+            </div>
+        </div>
     </div>
     <!-- Información adicional -->
-    <div class="info2"> Las fases utilizadas en esta metodología son las siguientes: Recopilación y análisis de requisitos, Diseño rápido, Construcción del prototipo, Evaluación Inicial del usuario, Refinamiento del prototipo e Implementación y mantenimiento.
-        <br>Beneficios de Prototipos para estudiantes de doctorado: 
-        <br>Identifica cualquier problema con el paso de las revisiones y puede corregirse ya que se van creando “prototipos/proyectos de prueba”.
-        <br>Facilita la comunicación y detección de errores a tiempo.
-        <br>Aumenta la probabilidad de éxito antes de su entrega final.
-        <br>No modifica el flujo del ciclo de vida.
+    <div class="info2">
+        <b>
+            <p id="3_9_1">Tipos de prototipos: </p>
+        </b>
+        <p id="3_9_2">Prototipo rápido (desechable). </p>
+        <p id="3_9_3">Prototipo evolutivo.</p>
+        <p id="3_9_4">Prototipo incremental.</p>
+        <p id="3_9_5">Prototipo extremo.</p>
+
+        <b>
+            <p id="text4">Características:</p>
+        </b>
+        <p id="text4_2">1. Utiliza menos tiempo ya que requiere de pruebas y testeos.</p>
+        <p id="text4_4">2. Requiere un uso óptimo de los recursos económicos.</p>
+        <p id="text4_6">3. Debe ser conciso e incluir toda la información requerida para poder ser evaluado y utilizado
+            correctamente.</p>
+        <p id="text4_8">4. Es evolutivo gracias a la interacción que tiene con los usuarios.</p>
+        <p id="text4_9">5. Es una aplicación funcional sin errores.</p>
+
+        <b>
+            <p id="text5">Roles en Prototipos: Los roles principales y específicos de Prototipos son:</p>
+        </b>
+        <p id="text5_2">Analista de requisitos es quien recopila toda la información inicial requerida por cliente para
+            empezar con el trabajo y así en cada iteración hacer retroalimentaciones.</p>
+        <p id="text5_4">Diseñador es quien desarrolla la interfaz del prototipo, o sea, crea el diseño para que el
+            proyecto sea visualmente bueno y sencillo de utilizar y comprender.</p>
+        <p id="text5_6">Codificador se encarga de la construcción del prototipo implementando toda la recopilación de
+            información que el analista creó junto con los detalles que el diseñador hizo.</p>
+        <p id="text5_8">Integrador como bien dice su nombre integra toda la información proporcionada haciendo la
+            estructura del proyecto para que este tenga coherencia y sea sencillo de entender.</p>
+        <p id="text5_9">Tester y gestores quienes se encargan de probar el programa y este cumpla con sus funciones
+            específicas sin ningún error. </p>
+
+        <b>
+            <p id="text6">Fases de Prototipos:</p>
+        </b>
+        <p id="text6_2">1. Recopilación y análisis de requisitos.</p>
+        <p id="text6_4">2. Diseño rápido.</p>
+        <p id="text6_6">3. Construcción del prototipo.</p>
+        <p id="text6_8">4. Evaluación Inicial del usuario.</p>
+        <p id="text6_9">5. Refinamiento del prototipo.</p>
+        <p id="text6_91">6. Implementación y Mantenimiento.</p>
+
+        <b>
+            <p id="text7">Beneficios de Prototipos para estudiantes de doctorado:</p>
+        </b>
+        <p id="text7_2">Identifica cualquier problema con el paso de las revisiones y puede corregirse ya que se van
+            creando “prototipos/proyectos de prueba”.</p>
+        <p id="text7_4">Facilita la comunicación y detección de errores a tiempo.</p>
+        <p id="text7_6">Aumenta la probabilidad de éxito antes de su entrega final.</p>
+        <p id="text7_8">La flexibilidad y adaptabilidad son los pilares de este modelo.</p>
+
+        <b>
+            <p id="text8">Ventajas:</p>
+        </b>
+        <p id="text8_2">1. No modifica el ciclo de vida.</p>
+        <p id="text8_4">2. Reduce el riesgo de construir productos que no satisfagan las necesidades de los usuarios.
+        </p>
+        <p id="text8_6">3. Reduce costo.</p>
+        <p id="text8_8">4. Aumenta la probabilidad de éxito.</p>
+
+        <b>
+            <p id="text9">Desventajas:</p>
+        </b>
+        <p id="text9_2">1. Puede consumir más tiempo y recursos en comparación con otros modelos .</p>
+        <p id="text9_4">2. Existe el riesgo de que los desarrolladores se centren en la creación de prototipos en lugar
+            de abordar aspectos fundamentales del sistema.</p>
+        <p id="text9_6">3. Los cliente pueden tener expectativas poco realistas respecto al tiempo y los recursos
+            necesarios para desarrollar el producto final.</p>
+
     </div>
     <footer
         style="background-color: #383333; color: rgb(255, 255, 255); padding: 20px 10px; text-align: center; margin-top: 20px; border-top: 2px solid #d0d0d0;">
@@ -199,5 +267,123 @@
             <p style="margin: 5px 0;">Teléfono: +52 999 999 9999</p>
         </div>
     </footer>
+    <script>
+        const translations = {
+            es: {
+                return_button: "Regresar a la página principal",
+                titulo: "Modelo 2: Prototipos",
+                text1: "Los prototipos son modelos de desarrollo de software los cuales se construyen, prueban y reelaboran hasta que puedan crear un prototipo bueno y aceptable.",
+                text2: "Los prototipos tienen diferentes categorías de organización y estos son representados como: Básico, Interactivo y Funcional",
+                text3: "Prototipo básico es cuando se hacen los bocetos iniciales para poder conocer y comentar ideas para su creación.",
+                text3_4: "Prototipo interactivo permite crear simulaciones detalladas que están más cerca de ser la implementación final.",
+                text3_8: "Prototipo funcional que es una versión casi completa del proyecto donde nos muestran el funcionamiento del producto final.",
+                "3_9_1": "Tipos de prototipos:",
+                "3_9_2": "Prototipo rápido (desechable).",
+                "3_9_3": "Prototipo evolutivo.",
+                "3_9_4": "Prototipo incremental.",
+                "3_9_5": "Prototipo extremo.",
+                text4: "Características:",
+                text4_2: "1. Utiliza menos tiempo ya que requiere de pruebas y testeos.",
+                text4_4: "2. Requiere un uso óptimo de los recursos económicos.",
+                text4_6: "3. Debe ser conciso e incluir toda la información requerida para poder ser evaluado y utilizado correctamente.",
+                text4_8: "4. Es evolutivo gracias a la interacción que tiene con los usuarios.",
+                text4_9: "5. Es una aplicación funcional sin errores.",
+                text5: "Roles en Prototipos:",
+                text5_2: "Analista de requisitos es quien recopila toda la información inicial requerida por cliente para empezar con el trabajo y así en cada iteración hacer retroalimentaciones.",
+                text5_4: "Diseñador es quien desarrolla la interfaz del prototipo, o sea, crea el diseño para que el proyecto sea visualmente bueno y sencillo de utilizar y comprender.",
+                text5_6: "Codificador se encarga de la construcción del prototipo implementando toda la recopilación de información que el analista creó junto con los detalles que el diseñador hizo.",
+                text5_8: "Integrador como bien dice su nombre integra toda la información proporcionada haciendo la estructura del proyecto para que este tenga coherencia y sea sencillo de entender.",
+                text5_9: "Tester y gestores quienes se encargan de probar el programa y este cumpla con sus funciones específicas sin ningún error.",
+                text6: "Fases de Prototipos:",
+                text6_2: "1. Recopilación y análisis de requisitos.",
+                text6_4: "2. Diseño rápido.",
+                text6_6: "3. Construcción del prototipo.",
+                text6_8: "4. Evaluación Inicial del usuario.",
+                text6_9: "5. Refinamiento del prototipo.",
+                text6_91: "6. Implementación y Mantenimiento.",
+                text7: "Beneficios de Prototipos para estudiantes de doctorado:",
+                text7_2: "Identifica cualquier problema con el paso de las revisiones y puede corregirse ya que se van creando “prototipos/proyectos de prueba”.",
+                text7_4: "Facilita la comunicación y detección de errores a tiempo.",
+                text7_6: "Aumenta la probabilidad de éxito antes de su entrega final.",
+                text7_8: "La flexibilidad y adaptabilidad son los pilares de este modelo.",
+                text8: "Ventajas:",
+                text8_2: "1. No modifica el ciclo de vida.",
+                text8_4: "2. Reduce el riesgo de construir productos que no satisfagan las necesidades de los usuarios.",
+                text8_6: "3. Reduce costo.",
+                text8_8: "4. Aumenta la probabilidad de éxito.",
+                text9: "Desventajas:",
+                text9_2: "1. Puede consumir más tiempo y recursos en comparación con otros modelos.",
+                text9_4: "2. Existe el riesgo de que los desarrolladores se centren en la creación de prototipos en lugar de abordar aspectos fundamentales del sistema.",
+                text9_6: "3. Los clientes pueden tener expectativas poco realistas respecto al tiempo y los recursos necesarios para desarrollar el producto final."
+            },
+            en: {
+                return_button: "Return to main page",
+                titulo: "Model 2: Prototyping",
+                text1: "Prototypes are software development models that are built, tested, and refined until a good and acceptable prototype is achieved.",
+                text2: "Prototypes are organized into different categories: Basic, Interactive, and Functional.",
+                text3: "Basic Prototype: Initial sketches are created to brainstorm and discuss ideas for development..",
+                text3_4: "Interactive Prototype: Allows for creating detailed simulations closer to the final implementation.",
+                text3_8: "Functional Prototype: A nearly complete version of the project that demonstrates the functionality of the final product.",
+                "3_9_1": "Types of Prototypes:",
+                "3_9_2": "Rapid (Throwaway) Prototype.",
+                "3_9_3": "Evolutionary Prototype.",
+                "3_9_4": "Incremental Prototype.",
+                "3_9_5": "Extreme Prototype.",
+                text4: "Characteristics:",
+                text4_2: "1. Requires less time as it involves testing and reviews.",
+                text4_4: "2. Optimizes the use of financial resources.",
+                text4_6: "3. Must be concise, including all the necessary information for evaluation and proper use.",
+                text4_8: "4. Evolves through user interaction.",
+                text4_9: "5. Results in a functional and error-free application.",
+                text5: "Roles in Prototyping:",
+                text5_2: "Requirements Analyst: Gathers all the initial information needed from the client to begin the work and provides feedback at each iteration.",
+                text5_4: "Designer: Develops the prototype's interface, creating a visually appealing and easy-to-use design.",
+                text5_6: "Coder: Builds the prototype by implementing the information gathered by the analyst and incorporating the designer's details.",
+                text5_8: "Integrator: Combines all the provided information to structure the project in a coherent and understandable manner.",
+                text5_9: "Testers and Managers: Test the program to ensure it meets its specific functions without any errors.",
+                text6: "Phases of Prototyping:",
+                text6_2: "1. Requirements Gathering and Analysis.",
+                text6_4: "2. Rapid Design.",
+                text6_6: "3. Prototype Construction.",
+                text6_8: "4. Initial User Evaluation.",
+                text6_9: "5. Prototype Refinement.",
+                text6_91: "6. Implementation and Maintenance.",
+                text7: "Benefits of Prototyping for Doctoral Students:",
+                text7_2: "Identifies issues during reviews and allows corrections through the creation of (test prototypes/projects).",
+                text7_4: "Facilitates communication and timely detection of errors.",
+                text7_6: "Increases the likelihood of success before final delivery.",
+                text7_8: "Flexibility and adaptability are key pillars of this model.",
+                text8: "Advantages of Prototyping:",
+                text8_2: "1. Does not disrupt the project lifecycle.",
+                text8_4: "2. Reduces the risk of developing products that fail to meet user needs.",
+                text8_6: "3. Lowers costs.",
+                text8_8: "4. Increases the probability of success.",
+                text9: "Disadvantages of Prototyping:",
+                text9_2: "1. May consume more time and resources compared to other models.",
+                text9_4: "2. There is a risk of developers focusing too much on prototyping rather than addressing fundamental system aspects.",
+                text9_6: "3. Clients may have unrealistic expectations regarding the time and resources needed for the final product."
+            }
+        };
+
+        let currentLanguage = 'es'; // Idioma inicial
+
+        function translateText() {
+            // Alternar idioma
+            currentLanguage = currentLanguage === 'es' ? 'en' : 'es';
+
+            // Recorrer todas las traducciones
+            for (const id in translations[currentLanguage]) {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.textContent = translations[currentLanguage][id];
+                }
+            }
+
+            // Cambiar texto del botón
+            document.getElementById('translate-button').textContent =
+                currentLanguage === 'es' ? 'Translate to English' : 'Traducir a español';
+        }
+    </script>
 </body>
+
 </html>
