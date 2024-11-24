@@ -1,0 +1,139 @@
+/* Estilo general del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    margin-right: 30px;
+    margin-left: 20px;
+}
+
+/* Configuración de diseño con Grid */
+.container {
+    display: grid;
+    grid-template-areas:
+        "container2 imagen"
+        "info2 imagen";
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+}
+
+.imagen {
+    grid-area: imagen;
+    background-color: #bebcbc;
+    border-radius: 10px;
+    display: flex;
+    overflow: hidden;
+}
+
+.imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ajusta la imagen sin distorsión */
+}
+
+/* Contenedor del título e información */
+.container2 {
+    grid-area: container2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.titulo {
+    background-color: #d0d0d0;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    text-align: left;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info1 {
+    background-color: #fff;
+    border: 1px solid #bebcbc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.5;
+    /* Mejora la legibilidad */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+}
+
+.info2 {
+    grid-area: info2;
+    background-color: #fff;
+    border: 1px solid #bebcbc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: justify;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #bebcbc;
+    padding: 10px 20px;
+    color: white;
+    flex-wrap: wrap;
+}
+
+#header img {
+    height: 60px;
+    margin-right: 10px;
+}
+
+#return_button {
+    padding: 8px 16px;
+    font-size: 1rem;
+    background-color: #E6CCB3;
+    color: #1D4350;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button {
+    background-color: #d9d9d9;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas:
+            "container2"
+            "imagen"
+            "info2";
+        grid-template-columns: 1fr;
+    }
+
+    .titulo {
+        font-size: 1rem;
+        /* Ajusta el tamaño para pantallas pequeñas */
+    }
+
+    .info1,
+    .info2 {
+        font-size: 0.8rem;
+        /* Texto más pequeño para dispositivos móviles */
+    }
+}
