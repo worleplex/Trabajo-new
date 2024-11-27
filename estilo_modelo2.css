@@ -45,7 +45,8 @@ body {
 }
 
 .titulo {
-    background-color: #d0d0d0;
+    background-color: #42A5F5;
+    color: white;
     border-radius: 10px;
     padding: 10px;
     font-weight: bold;
@@ -85,7 +86,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: #bebcbc;
+    background-color: #42A5F5;
     padding: 10px 20px;
     color: white;
     flex-wrap: wrap;
@@ -99,8 +100,8 @@ body {
 #return_button {
     padding: 8px 16px;
     font-size: 1rem;
-    background-color: #E6CCB3;
-    color: #1D4350;
+    background-color: #42A5F5;
+    color: white;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -108,12 +109,13 @@ body {
 }
 
 .button {
-    background-color: #d9d9d9;
+    background-color: #42A5F5;
     border: none;
     border-radius: 20px;
     padding: 10px 20px;
     text-align: center;
     cursor: pointer;
+    color: white;
 }
 
 /* Responsividad para pantallas pequeñas */
