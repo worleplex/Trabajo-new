@@ -106,12 +106,13 @@ body {
 }
 
 .button {
-    background-color: #d9d9d9;
+    background-color: #42A5F5;
     border: none;
     border-radius: 20px;
     padding: 10px 20px;
     text-align: center;
     cursor: pointer;
+    color: white;
 }
 
 /* Responsividad para pantallas pequeñas */
