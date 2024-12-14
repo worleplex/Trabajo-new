@@ -163,6 +163,7 @@
             const chatMessages = document.getElementById("chat-messages");
             const audioElement = document.createElement("audio");
             audioElement.controls = true;
+            audioElement.autoplay = true;
             audioElement.src = urlAudio;
             chatMessages.appendChild(audioElement);
             chatMessages.scrollTop = chatMessages.scrollHeight;
