@@ -98,7 +98,7 @@
         </div>
     </div>
 
-    <script>
+   <script>
         // Diccionario de respuestas predefinidas con soporte para audio
         const respuestasPredefinidas = {
             "javascript": "JavaScript es un lenguaje de programación que permite implementar funcionalidades complejas en páginas web.",
@@ -140,14 +140,33 @@
             if (preguntaLimpia in respuestasNormalizadas) {
                 const resultado = respuestasNormalizadas[preguntaLimpia];
                 if (typeof resultado === "object" && resultado.audio) {
-                    return { respuesta: resultado.respuesta, audio: resultado.audio };
+                    return { respuesta: null, audio: resultado.audio };
                 } else {
-                    return { respuesta: resultado };
+                    return { respuesta: resultado, audio: null };
                 }
             }
-    
-            // Si no está en el diccionario
-            return { respuesta: "No encontré información específica, pero puedo ayudarte a buscar algo más." };
+
+            // Búsqueda en DuckDuckGo
+            try {
+                const response = await fetch(`https://api.duckduckgo.com/?q=${encodeURIComponent(preguntaOriginal)}&format=json&no_html=1`);
+                const data = await response.json();
+
+                if (data.AbstractText) {
+                    return { respuesta: data.AbstractText, audio: null };
+                } else if (data.RelatedTopics && data.RelatedTopics.length > 0) {
+                    const resultadoRelevante = data.RelatedTopics.find(topic => topic.Text && topic.Text.includes(" "));
+                    if (resultadoRelevante) {
+                        return { respuesta: `Relacionado: ${resultadoRelevante.Text} (Fuente: ${resultadoRelevante.FirstURL})`, audio: null };
+                    }
+                }
+
+                // Si no hay resultados relevantes
+                return { respuesta: "No encontré información específica, pero puedo ayudarte a buscar algo más.", audio: null };
+
+            } catch (error) {
+                console.error("Error en la búsqueda de DuckDuckGo:", error);
+                return { respuesta: "Hubo un problema al buscar en internet. Por favor, intenta más tarde.", audio: null };
+            }
         }
     
         function agregarMensaje(mensaje, clase) {
@@ -181,14 +200,15 @@
     
             // Obtener la respuesta basada en la pregunta original
             const { respuesta, audio } = await obtenerRespuesta(preguntaOriginal);
-    
-            // Agregar la respuesta del bot al chat
-            agregarMensaje(respuesta, "bot");
-    
+
             // Si hay audio, agregar el reproductor
             if (audio) {
                 agregarAudio(audio);
+            }else{
+                // Agregar la respuesta del bot al chat
+                agregarMensaje(respuesta, "bot");
             }
+            
         }
     </script>
 </body>
